@@ -1,0 +1,41 @@
+---
+Language: Cpp
+Standard: c++17
+BasedOnStyle: LLVM
+
+AccessModifierOffset: -4
+AlignAfterOpenBracket: DontAlign
+AlignEscapedNewlines: Left
+AllowShortBlocksOnASingleLine: false
+AllowShortFunctionsOnASingleLine: Inline
+AllowShortIfStatementsOnASingleLine: false
+AlignTrailingComments: false
+AlwaysBreakTemplateDeclarations: Yes
+BreakBeforeBraces: Stroustrup
+BreakConstructorInitializers: BeforeComma
+ConstructorInitializerAllOnOneLineOrOnePerLine: true
+PointerAlignment: Left
+IndentCaseLabels: true
+KeepEmptyLinesAtTheStartOfBlocks: false
+MaxEmptyLinesToKeep: 2
+SpaceAfterCStyleCast: true
+
+IncludeBlocks: Regroup
+IncludeCategories:
+  - Regex:     '.*\.generated\.h'
+    Priority:  100
+  - Regex:     '.*(PCH).*'
+    Priority:  -1
+  - Regex:     '".*"'
+    Priority:  1
+  - Regex:     '^<.*\.(h)>'
+    Priority:  3
+  - Regex:     '^<.*>'
+    Priority:  4
+IncludeIsMainRegex: '([-_](test|unittest))?$'
+
+ColumnLimit: 0
+IndentWidth: 4
+TabWidth: 4
+UseTab: ForContinuationAndIndentation
+...
