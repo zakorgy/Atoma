@@ -18,6 +18,11 @@ protected:
 	/** True if the controlled character should navigate to the mouse cursor. */
 	uint32 bMoveToMouseCursor : 1;
 
+	/** True if the controlled character is controlled by keyboard. */
+	bool bHasKeayboardInput = false;
+
+	FVector Movedirection = FVector(0.0);
+
 	// Begin PlayerController interface
 	virtual void PlayerTick(float DeltaTime) override;
 	virtual void SetupInputComponent() override;
@@ -34,6 +39,15 @@ protected:
 	
 	/** Navigate player to the given world location. */
 	void SetNewMoveDestination(const FVector DestLocation);
+
+	/** Navigate player around the x axis. */
+	void SetNewMoveDestinationForward(float Amount);
+
+	/** Navigate player around the y axis. */
+	void SetNewMoveDestinationRight(float Amount);
+
+	/** Navigate player to the given world location. */
+	void Move();
 
 	/** Input handlers for SetDestination action. */
 	void OnSetDestinationPressed();
